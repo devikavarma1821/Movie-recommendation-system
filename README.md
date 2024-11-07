@@ -1,7 +1,3 @@
-# Movie-recommendation-system
-A Movie Recommender System built with Streamlit and TMDb API that suggests movies based on content-based filtering. Users can select a movie to get recommendations 
-
-
 # Movie Recommender System 🎬
 
 A simple and interactive Movie Recommender System built with Streamlit that provides movie recommendations based on content-based filtering. This project uses the TMDb (The Movie Database) API to fetch movie posters and metadata, giving users a more engaging experience. Users can select a movie to receive recommendations or explore random suggestions on initial load.
