@@ -72,10 +72,6 @@ This project was developed using:
 - [Streamlit](https://streamlit.io/)
 - [TMDb API](https://www.themoviedb.org/documentation/api)
 
-## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
----
 
 Feel free to fork this repository, submit issues, or contribute by making pull requests. Happy recommending! 📽️
