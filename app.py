@@ -9,8 +9,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 movies_dict = pickle.load(open(os.path.join(BASE_DIR, 'movie_dict.pkl'), 'rb'))
 similarity = pickle.load(open(os.path.join(BASE_DIR, 'similarity.pkl'), 'rb'))
 
-'''making separate git version that can hold more than 100MB because similarity and movie_dict
-contains '''
+
 
 def fetch_poster(movie_id):
     try:

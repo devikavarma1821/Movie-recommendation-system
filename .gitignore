@@ -11,5 +11,5 @@ venv/
 .streamlit/
 
 # Ignore large data files
-*.pkl
+
 *.csv
