@@ -2,12 +2,15 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
+import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 movies_dict = pickle.load(open(os.path.join(BASE_DIR, 'movie_dict.pkl'), 'rb'))
 similarity = pickle.load(open(os.path.join(BASE_DIR, 'similarity.pkl'), 'rb'))
 
+'''making separate git version that can hold more than 100MB because similarity and movie_dict
+contains '''
 
 def fetch_poster(movie_id):
     try:
@@ -59,7 +62,7 @@ st.title('Movie Recommender System')
 
 selected_movie_name = st.selectbox(
     'Select a movie to get recommendations',  # Label for the dropdown
-    movies["title"].values  # Options in the dropdown
+    movies["title"].values  # option in dropdown
 )
 
 # Display the selected movie when 'Recommend' button is clicked
