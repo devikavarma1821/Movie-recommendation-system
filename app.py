@@ -5,10 +5,26 @@ import requests
 
 
 def fetch_poster(movie_id):
-    response = requests.get("https://api.themoviedb.org/3/movie/{}?api_key=8265bd1679663a7ea12ac168da84d2e8&language=en-US".format(movie_id))
-    data = response.json()
+    try:
+        url = f"https://api.themoviedb.org/3/movie/{movie_id}"
+        params = {
+            "api_key": "8265bd1679663a7ea12ac168da84d2e8",
+            "language": "en-US"
+        }
 
-    return "https://image.tmdb.org/t/p/w500/" + data['poster_path']
+        response = requests.get(url, params=params, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+
+        poster_path = data.get("poster_path")
+        if poster_path:
+            return "https://image.tmdb.org/t/p/w500/" + poster_path
+        else:
+            return "https://via.placeholder.com/300x450?text=No+Image"
+
+    except Exception as e:
+        return None
+
 
 def recommend(movie):
     movie_index = movies[movies['title'] == movie].index[0]
